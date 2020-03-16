@@ -1,5 +1,5 @@
-const { gql } = require('apollo-server-express');
-const user = require('../models/users.model');
+const { gql } = require("apollo-server-lambda");
+const user = require("../models/users.model");
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -34,25 +34,28 @@ const resolvers = {
 				username: args.username,
 				password: args.password,
 				mobile: args.mobile
-			})
+			});
 		},
 		updateUser: async (parent, args) => {
-			return await user.updateOne({
-				_id: args._id
-			}, {
-				username: args.username,
-				mobile: args.mobile,
-				password: args.password
-			})
+			return await user.updateOne(
+				{
+					_id: args._id
+				},
+				{
+					username: args.username,
+					mobile: args.mobile,
+					password: args.password
+				}
+			);
 		},
 		deleteUser: async (parent, args) => {
 			return await user.deleteOne({
 				_id: args._id
-			})
+			});
 		}
 	}
 };
 
-const User = { typeDefs, resolvers }
+const User = { typeDefs, resolvers };
 
 module.exports = User;

@@ -1,6 +1,6 @@
-const express = require("express");
-const { ApolloServer } = require("apollo-server-express");
-const lambda = require("netlify-lambda");
+"use strict";
+const { ApolloServer } = require("apollo-server-lambda");
+const serverless = require("serverless-http");
 
 const User = require("./schema/user.schema");
 const server = new ApolloServer(User);
@@ -13,14 +13,4 @@ dataBase.once("open", function() {
 	console.log("We're connected!!");
 });
 
-const app = express();
-server.applyMiddleware({
-	app,
-	path: "/users"
-});
-
-app.listen({ port: 3000 }, () =>
-	console.log(`Server ready at http://localhost:3000${server.graphqlPath}`)
-);
-
-module.exports.handler = lambda(app);
+module.exports.handler = server.createHandler();

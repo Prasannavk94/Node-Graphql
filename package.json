@@ -1,19 +1,21 @@
 {
-  "name": "graphql-demo",
-  "version": "1.0.0",
-  "description": "learning graphql with expressjs",
-  "main": "app.js",
-  "author": "Prasanna V",
-  "license": "MIT",
-  "dependencies": {
-    "apollo-server-express": "^2.11.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.3",
-    "netlify-lambda": "^1.6.3"
-  },
-  "scripts": {
-    "start": "node app.js"
-  }
+	"name": "graphql-demo",
+	"version": "1.0.0",
+	"description": "learning graphql with expressjs",
+	"main": "app.js",
+	"author": "Prasanna V",
+	"license": "MIT",
+	"dependencies": {
+		"apollo-server-lambda": "^2.11.0",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.9.3",
+		"netlify-lambda": "^1.6.3",
+		"serverless-http": "^2.3.2"
+	},
+	"scripts": {
+		"start": "./node_modules/.bin/netlify-lambda serve .",
+		"build": "./node_modules/.bin/netlify-lambda build ."
+	}
 }
