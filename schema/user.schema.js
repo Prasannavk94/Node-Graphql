@@ -56,6 +56,6 @@ const resolvers = {
 	}
 };
 
-const User = { typeDefs, resolvers };
+const User = { typeDefs, resolvers, introspection: true, playground: true };
 
 module.exports = User;

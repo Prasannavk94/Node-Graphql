@@ -13,4 +13,4 @@ dataBase.once("open", function() {
 	console.log("We're connected!!");
 });
 
-module.exports.handler = server.createHandler();
+exports.handler = server.createHandler();
