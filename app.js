@@ -1,6 +1,5 @@
 "use strict";
 const { ApolloServer } = require("apollo-server-lambda");
-const serverless = require("serverless-http");
 
 const User = require("./schema/user.schema");
 const server = new ApolloServer(User);
