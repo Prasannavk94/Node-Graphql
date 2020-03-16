@@ -17,5 +17,8 @@
 	"scripts": {
 		"start": "./node_modules/.bin/netlify-lambda serve .",
 		"build": "./node_modules/.bin/netlify-lambda build ."
+	},
+	"devDependencies": {
+		"encoding": "^0.1.12"
 	}
 }
