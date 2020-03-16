@@ -13,4 +13,8 @@ dataBase.once("open", function() {
 	console.log("We're connected!!");
 });
 
-exports.handler = server.createHandler();
+exports.handler = server.createHandler({
+	cors: {
+		origin: "*"
+	}
+});
